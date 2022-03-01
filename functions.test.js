@@ -5,9 +5,10 @@ test('AAA has 3 letters', () => {
 });
 
 test('Empty string', () => {
-  expect(stringLength('')).toStrictEqual(Error('the string is too long (>10) or has no caracters'));
+  expect( () => stringLength('')).toThrowError('the string is too long (>10) or has no caracters');
 });
 
 test('long string', () => {
-  expect(stringLength('aaaaaaaaaaa')).toStrictEqual(Error('the string is too long (>10) or has no caracters'));
+  expect( () => stringLength('aaaaaaaaaaa')).toThrowError('the string is too long (>10) or has no caracters');
 });
+
